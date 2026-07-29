@@ -48,9 +48,10 @@
   var q = new URLSearchParams(location.search);
   var name = (q.get("n") || "").trim();
   if (name) { document.getElementById("who").textContent = name; }
-  var uid = (q.get("u") || "").trim();
-  var deep = "cover://add?u=" + encodeURIComponent(uid);
-  document.getElementById("open").setAttribute("href", deep);
+  // If the app is installed, iOS intercepts this URL before the page ever
+  // loads. Reaching this page means it probably is not — so the primary
+  // action is the App Store, and reloading is the only "open" we can offer.
+  document.getElementById("open").setAttribute("href", location.href);
 </script>
 </body>
 </html>
