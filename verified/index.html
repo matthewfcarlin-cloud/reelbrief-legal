@@ -4,30 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>ReelBrief — Verified</title>
+<title>Cover News — Verified</title>
 <style>
+  :root { --gold:#f5c518; --ink:#0a0a0e; }
+  * { box-sizing:border-box; }
   body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-         background:#000; color:#fff; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  .card { text-align:center; padding:40px 28px; max-width:340px; }
-  .check { width:72px; height:72px; border-radius:50%; background:rgba(59,130,246,.15);
-           display:flex; align-items:center; justify-content:center; margin:0 auto 22px;
-           border:1px solid rgba(59,130,246,.4); }
-  .check svg { width:34px; height:34px; stroke:#3b82f6; }
-  h1 { font-size:24px; margin:0 0 10px; font-weight:800; }
-  p  { color:#9ca3af; font-size:15px; line-height:1.5; margin:0; }
-  .brand { margin-top:30px; font-size:12px; letter-spacing:2px; color:#4b5563; font-weight:700; }
+         background:
+           radial-gradient(120% 70% at 12% -10%, rgba(58,90,180,.38) 0%, rgba(10,10,14,0) 62%),
+           var(--ink);
+         color:#fff; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         position:relative; overflow:hidden; }
+  /* fine diagonal rules — same texture as the branded cards in the app */
+  body::before { content:""; position:absolute; inset:0; pointer-events:none;
+                 background:repeating-linear-gradient(45deg,
+                   rgba(255,255,255,.028) 0 1px, transparent 1px 26px); }
+  .card { position:relative; text-align:center; padding:44px 28px; max-width:360px; }
+
+  .masthead { font-size:26px; font-weight:900; letter-spacing:11px; text-indent:11px; }
+  .rule { width:132px; height:3px; background:var(--gold); margin:14px auto; border-radius:2px; }
+  .tag { font-size:10px; letter-spacing:3.4px; color:#8b8f98; font-weight:600; margin-bottom:38px; }
+
+  .check { width:78px; height:78px; border-radius:50%;
+           background:rgba(245,197,24,.12); border:1px solid rgba(245,197,24,.45);
+           display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+  .check svg { width:36px; height:36px; stroke:var(--gold); }
+
+  h1 { font-size:25px; margin:0 0 12px; font-weight:800; letter-spacing:-.2px; }
+  p  { color:#9ca3af; font-size:15px; line-height:1.55; margin:0 auto; max-width:300px; }
+  .hint { margin-top:26px; font-size:13px; color:#6b7280; }
 </style>
 </head>
 <body>
   <div class="card">
+    <div class="masthead">COVER</div>
+    <div class="rule"></div>
+    <div class="tag">THE NEWS, IN REELS</div>
+
     <div class="check">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
     </div>
-    <h1>You're verified ✓</h1>
-    <p>Your email is confirmed. You can close this page and return to the <strong>ReelBrief</strong> app.</p>
-    <div class="brand">REELBRIEF</div>
+
+    <h1>You're verified</h1>
+    <p>Your email is confirmed. Head back to <strong>Cover</strong> — you're all set.</p>
+    <div class="hint">You can close this tab.</div>
   </div>
 </body>
 </html>
