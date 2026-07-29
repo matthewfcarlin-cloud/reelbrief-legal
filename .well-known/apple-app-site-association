@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "GK97AW599V.com.reelbrief.app",
+        "paths": [ "/add*", "/u/*" ]
+      }
+    ]
+  }
+}
