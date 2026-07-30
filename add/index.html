@@ -45,9 +45,14 @@
 <script>
   // ?u=<user id>&n=<display name>. The app itself handles this URL through
   // universal links; this page is the fallback for people without it yet.
+  // The `n=` parameter is NOT shown. The sender writes the whole invite
+  // URL, so the name beside the id is whatever they chose — a link can
+  // claim to be anyone, including Cover staff. textContent meant it could
+  // never execute, but it could still lie, and this page has no way to
+  // check it against the id (that needs a signed-in session). The app
+  // resolves the real name from the user id instead; here we simply do
+  // not make a claim we cannot stand behind.
   var q = new URLSearchParams(location.search);
-  var name = (q.get("n") || "").trim();
-  if (name) { document.getElementById("who").textContent = name; }
   // If the app is installed, iOS intercepts this URL before the page ever
   // loads. Reaching this page means it probably is not — so the primary
   // action is the App Store, and reloading is the only "open" we can offer.
